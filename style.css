@@ -1,22 +1,25 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
-  body{
+  
+  body {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  .base{
+  
+  .base {
     height: 200px;
     width: 300px;
     position: relative;
     display: flex;
     justify-content: center;
   }
-  .letter{
+  
+  .letter {
     height: 0px;
     width: 0px;
     border-top: 100px solid red;
@@ -27,24 +30,29 @@
     position: absolute;
     z-index: 6;
   }
-  .letter:hover{
+  
+  .letter:hover {
     animation: open 1s linear forwards;
     z-index: 1;
   }
-  @keyframes open{
-    to{
+  
+  @keyframes open {
+    to {
       transform: rotateX(180deg);
     }
   }
-  .letter:hover ~ .paper{
+  
+  .letter:hover ~ .paper {
     animation: show 1s 1s linear forwards;
   }
-  @keyframes show{
-    to{
+  
+  @keyframes show {
+    to {
       transform: translateY(-80px);
     }
   }
-  .cover{
+  
+  .cover {
     position: absolute;
     z-index: 3;
     top: 0;
@@ -52,13 +60,16 @@
     width: 0px;
     border-top: 200px solid transparent;
   }
-  .cover-left{
-    border-left: 300px solid rgb(200,0,0);
+  
+  .cover-left {
+    border-left: 300px solid rgb(200, 0, 0);
   }
-  .cover-right{
-    border-right: 300px solid rgb(200,0,0);
+  
+  .cover-right {
+    border-right: 300px solid rgb(200, 0, 0);
   }
-  .paper{
+  
+  .paper {
     height: 200px;
     width: 280px;
     border-radius: 5px;
@@ -68,33 +79,57 @@
     transition: all 1s 1s;
     box-shadow: 0px 0px 2px black;
   }
-  h3{
+  
+  h3 {
     padding: 1em 0 0 1em;
   }
-  h4{
+  
+  h4 {
     text-align: center;
   }
-  p{
+  
+  p {
     text-align: right;
     padding-right: 1em;
   }
-/* CSS rules for youtube link (start) */
-  .yt{
-    height : 20px;
+  
+  /* CSS rules for youtube link (start) */
+  .yt {
+    height: 20px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     position: absolute;
     bottom: 20px;
-   }
-  .yt > a{
-    display : flex;
-    align-items : center;
-    text-decoration : none;
-    color : white;
-    font-size : 1.2em;
+  }
+  
+  .yt > a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
     border-radius: 0.5em;
     padding: 0.4em 1em;
     background-color: red;
+  }
+  
+  /* Media query for iPhone */
+  @media only screen and (max-width: 414px) {
+    .base {
+      height: 150px;
+      width: 250px;
+    }
+  
+    .letter {
+      border-top: 75px solid red;
+      border-left: 125px solid transparent;
+      border-right: 125px solid transparent;
+    }
+  
+    .paper {
+      height: 150px;
+      width: 230px;
+    }
   }
